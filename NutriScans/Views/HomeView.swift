@@ -6,33 +6,63 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct HomeView: View {
     var body: some View {
-        VStack{
-            ZStack{
-                
-                Rectangle()
-                    .fill(Color(hex: 0x733332))
-                    .frame(width: 450, height: 100)
-                    .opacity(0.8)
-                Text("NutriScan")
-                    .font(.custom("Colus-Regular",size: 67))
-                    .foregroundColor(Color(hex: 0x7e8139))
-                    .padding(2)
-                
-                
-            }.background(Image("BgHome"))
-            HStack{
-                Spacer()
-                Rectangle()
-                    .fill(Color(hex: 0x1a3b4d))
-                    .frame(width: 190, height: 30)
-                    .opacity(0.8)
-            }
-        }
+        ZStack{
+               HStack{
+                   AmbienceVid()
+               }
+               .edgesIgnoringSafeArea(.all)
+           }
     }
 }
+
+struct AmbienceVid: UIViewRepresentable {
+   func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<AmbienceVid>) {
+   }
+
+   func makeUIView(context: Context) -> UIView {
+     return PlayerUIView(frame: .zero)
+   }
+ }
+
+
+class PlayerUIView: UIView {
+   private var playerLooper: AVPlayerLooper?
+   private var playerLayer = AVPlayerLayer()
+   
+   required init?(coder: NSCoder) {
+       fatalError("init(coder:) has not been implemented")
+   }
+
+   override init(frame: CGRect) {
+       super.init(frame: frame)
+       // Load the resource
+       let fileUrl = Bundle.main.url(forResource: "HomeBg", withExtension: "mp4")!
+       let asset = AVURLAsset(url: fileUrl)
+       let item = AVPlayerItem(asset: asset)
+       
+       // Setup the player
+       let player = AVQueuePlayer()
+       playerLayer.player = player
+       playerLayer.videoGravity = .resizeAspectFill
+       layer.addSublayer(playerLayer)
+        
+       // Create a new player looper with the queue player and template item
+       playerLooper = AVPlayerLooper(player: player, templateItem: item)
+
+       // Start the movie
+       player.play()
+   }
+
+   override func layoutSubviews() {
+           super.layoutSubviews()
+           playerLayer.frame = bounds
+   }
+}
+
 
 #Preview {
     HomeView()

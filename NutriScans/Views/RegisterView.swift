@@ -16,61 +16,82 @@ struct RegisterView: View {
     @State private var displayName = ""
     @State private var errorMessage: String?
     @StateObject private var auth = AuthService.shared
-
+    
     
     var body: some View {
-        Form{
-            Section("Create Account") {
-                TextField("Enter Email", text: $email)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-                    .keyboardType(.emailAddress)
+        VStack{
+            Spacer()
+            Text("Create an Account")
+                .font(.custom("Colus-Regular", size: 30))
+                .foregroundColor(Color(hex: 0xc9cb77))
+                .padding(.bottom, -10)
+            Form{
+                Section("") {
+                    TextField("", text: $displayName, prompt: Text("Username").foregroundColor(.gray))
+                    
+                    TextField("", text: $email, prompt: Text("Email").foregroundColor(.gray))
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                        .keyboardType(.emailAddress)
+                    
+                    SecureField("Password (Min 6 characters)", text: $password, prompt: Text("Password (Min. 6 characters)").foregroundColor(.gray))
+                    
+                    
+                } .listRowBackground(Color(hex: 0x394c4c))
+                    .foregroundStyle(Color(hex: 0xffb3af))
                 
-                SecureField("Password (Min 6 characters)", text: $password)
-                TextField("Display Name", text: $displayName)
-                
-            }
-            
-            if let errorMessage = errorMessage {
-                Text(errorMessage)
-                    .foregroundStyle(.red)
-            }
-            
-            
-            Button("Sign Up"){
-                print("Sign up clicked")
-                
-                // validations
-                guard Validators.isValidEmail(email) else {
-                    self.errorMessage = "Invalid Email"
-                    return
+                if let errorMessage = errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(Color(hex: 0xffdad6))
+                        .listRowBackground(Color(hex: 0x93000a))
                 }
                 
-                guard Validators.isValidPassword(password) else {
-                    self.errorMessage = "Invalid Passwrd"
-                    return
-                }
                 
-                guard !displayName.trimmingCharacters(in: .whitespaces).isEmpty else {
-                    self.errorMessage = "Display Name is required"
-                    return
-                }
-                
-                // auth.sign up
-                
-                auth.signUp(email: email, passwrod: password, displayName: displayName) { result in
-                    switch result {
-                    case .success(let success):
-                        self.errorMessage = nil
-                    case .failure(let failure):
-                        self.errorMessage = failure.localizedDescription
+                Button(action: {
+                    print("Sign up clicked")
+                    
+                    // validations
+                    guard Validators.isValidEmail(email) else {
+                        self.errorMessage = "Invalid Email"
+                        return
                     }
-                }
+                    
+                    guard Validators.isValidPassword(password) else {
+                        self.errorMessage = "Invalid Password. Must have over 6 characters"
+                        return
+                    }
+                    
+                    guard !displayName.trimmingCharacters(in: .whitespaces).isEmpty else {
+                        self.errorMessage = "Display Name is required"
+                        return
+                    }
+                    
+                    // auth.sign up
+                    
+                    auth.signUp(email: email, passwrod: password, displayName: displayName) { result in
+                        switch result {
+                        case .success(let success):
+                            self.errorMessage = nil
+                        case .failure(let failure):
+                            self.errorMessage = failure.localizedDescription
+                        }
+                    }
+                }){
+                    HStack(){
+                        Text("Register")
+                            .foregroundStyle(Color(hex:0x1a1111))
+                        Image(systemName: "square.and.pencil")
+                            .foregroundStyle(Color(hex:0x1a1111))
+                    }.frame(maxWidth: .infinity, alignment: .center)
+                }.listRowBackground(Color(hex: 0x5f6935))
+                .foregroundStyle(Color(hex:0x1a1111))
+                .disabled(email.isEmpty || password.isEmpty || displayName.isEmpty)
                 
-                
-            }
-            .disabled(email.isEmpty || password.isEmpty || displayName.isEmpty)
-        }
+            }.scrollContentBackground(.hidden)
+                .background(Color(hex: 0x1a1110))
+                .frame(maxWidth: .infinity, maxHeight: 500)
+                .scrollDisabled(true)
+        }.background(Color(hex: 0x1a1110))
     }
 }
 

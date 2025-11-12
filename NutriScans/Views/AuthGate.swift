@@ -20,7 +20,7 @@ struct AuthGate: View {
             .pickerStyle(.segmented)
             .padding()
             
-            
+
             if showLogin {
                 // Login View
                 LoginView()
@@ -28,7 +28,7 @@ struct AuthGate: View {
                 // Register view
                 RegisterView()
             }
-        }
+        }.background(Color(hex: 0x1a1111))
     }
 }
 
