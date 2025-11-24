@@ -11,7 +11,7 @@
 		7B02BDE92EB85DE2005D687A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7B02BDE82EB85DE2005D687A /* FirebaseAuth */; };
 		7B02BDEB2EB85DE8005D687A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7B02BDEA2EB85DE8005D687A /* FirebaseFirestore */; };
 		7B02BEB52EBA3F27005D687A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B02BEB42EBA3F27005D687A /* AVFoundation.framework */; };
-		7B443A972ED45D6700F5AC84 /* OpenFoodFactsSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 7B443A962ED45D6700F5AC84 /* OpenFoodFactsSDK */; };
+		7B76DBE02ED4FD4F002FDAAF /* OpenFoodFactsSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 7B76DBDF2ED4FD4F002FDAAF /* OpenFoodFactsSDK */; };
 		7BE1DCE42EBDB84B00E6B60D /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE1DCE32EBDB84B00E6B60D /* Vision.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 				7B02BDE92EB85DE2005D687A /* FirebaseAuth in Frameworks */,
 				7BE1DCE42EBDB84B00E6B60D /* Vision.framework in Frameworks */,
 				7B02BDEB2EB85DE8005D687A /* FirebaseFirestore in Frameworks */,
-				7B443A972ED45D6700F5AC84 /* OpenFoodFactsSDK in Frameworks */,
+				7B76DBE02ED4FD4F002FDAAF /* OpenFoodFactsSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +110,7 @@
 				7B02BDE62EB85DDC005D687A /* FirebaseCore */,
 				7B02BDE82EB85DE2005D687A /* FirebaseAuth */,
 				7B02BDEA2EB85DE8005D687A /* FirebaseFirestore */,
-				7B443A962ED45D6700F5AC84 /* OpenFoodFactsSDK */,
+				7B76DBDF2ED4FD4F002FDAAF /* OpenFoodFactsSDK */,
 			);
 			productName = NutriScans;
 			productReference = 7B02BDD22EB853BA005D687A /* NutriScans.app */;
@@ -142,7 +142,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				7B02BDE52EB85DC1005D687A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				7B443A952ED45D6700F5AC84 /* XCRemoteSwiftPackageReference "openfoodfacts-swift" */,
+				7B76DBDE2ED4FD4F002FDAAF /* XCRemoteSwiftPackageReference "openfoodfacts-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7B02BDD32EB853BA005D687A /* Products */;
@@ -398,7 +398,7 @@
 				minimumVersion = 12.5.0;
 			};
 		};
-		7B443A952ED45D6700F5AC84 /* XCRemoteSwiftPackageReference "openfoodfacts-swift" */ = {
+		7B76DBDE2ED4FD4F002FDAAF /* XCRemoteSwiftPackageReference "openfoodfacts-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ALPHVMANE/openfoodfacts-swift.git";
 			requirement = {
@@ -424,9 +424,9 @@
 			package = 7B02BDE52EB85DC1005D687A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		7B443A962ED45D6700F5AC84 /* OpenFoodFactsSDK */ = {
+		7B76DBDF2ED4FD4F002FDAAF /* OpenFoodFactsSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7B443A952ED45D6700F5AC84 /* XCRemoteSwiftPackageReference "openfoodfacts-swift" */;
+			package = 7B76DBDE2ED4FD4F002FDAAF /* XCRemoteSwiftPackageReference "openfoodfacts-swift" */;
 			productName = OpenFoodFactsSDK;
 		};
 /* End XCSwiftPackageProductDependency section */

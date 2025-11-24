@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct AuthGate: View {
-    
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(hex: "#534342FF")
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(hex: "#FFb3ADFF")], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(hex: "#C9CB77FF")], for: .normal)
+    }
     @State private var showLogin = true
 
     var body: some View {
         VStack{
             Picker("", selection: $showLogin) {
                 Text("Login").tag(true)
-                    .foregroundStyle(Color(hex:0x1a1111))
+                        
                 Text("Register").tag(false)
             }
             .pickerStyle(.segmented)

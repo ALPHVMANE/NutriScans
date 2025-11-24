@@ -39,7 +39,7 @@ struct TabScreen: View {
                         Text("Profile")
                     }
             }
-        }.accentColor(Color(hex: 0x5f6935))
+        }.accentColor(Color(hex: 0xc9cb77))
     }
 }
 
