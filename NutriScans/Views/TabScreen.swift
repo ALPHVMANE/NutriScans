@@ -39,10 +39,7 @@ struct TabScreen: View {
                         Text("Profile")
                     }
             }
-        }.accentColor(Color(hex: 0x5f6935))
-//        .onAppear() {
-//            UITabBar.appearance().backgroundColor = UIColor(hex:"#904a48ff")
-//        }
+        }.accentColor(Color(hex: 0xc9cb77))
     }
 }
 

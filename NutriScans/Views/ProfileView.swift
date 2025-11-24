@@ -21,7 +21,7 @@ struct ProfileView: View {
             
             RoundedRectangle(cornerRadius: 0)
                 .fill(Color(hex: 0x271d1c))
-                .frame(height: 50)
+                .frame(height: 30)
             ZStack {
                 // Cover banner
                 RoundedRectangle(cornerRadius: 40)
@@ -97,8 +97,9 @@ struct ProfileView: View {
                     }
                 }) {
                     HStack(){
+
                         Text("Log Out")
-                            .foregroundStyle(Color(hex:0x1a1111))
+             .foregroundStyle(Color(hex:0x1a1111))
                         Image(systemName: "iphone.and.arrow.right.outward")
                             .foregroundStyle(Color(hex:0x1a1111))
                     }
@@ -113,6 +114,7 @@ struct ProfileView: View {
                
             }.scrollContentBackground(.hidden)
                 .frame(height: 450)
+
                 .background(Color(hex: 0x1a1110))
                 .clipShape(
                     .rect(
