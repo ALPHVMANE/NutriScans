@@ -69,6 +69,7 @@ struct ScannerView: UIViewControllerRepresentable {
               func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
                   guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
 
+
                   let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .up, options: [:])
                   do {
                       try imageRequestHandler.perform(self.requests)
@@ -76,13 +77,11 @@ struct ScannerView: UIViewControllerRepresentable {
                       print("Failed to perform barcode detection: \(error)")
                   }
               }
-
               private func handleBarcodes(request: VNRequest, error: Error?) {
                   if let error = error {
                       print("Barcode detection error: \(error)")
                       return
                   }
-
                   guard let results = request.results as? [VNBarcodeObservation] else { return }
                   for barcode in results {
                       if let payload = barcode.payloadStringValue {

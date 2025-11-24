@@ -15,6 +15,7 @@ struct AuthGate: View {
         VStack{
             Picker("", selection: $showLogin) {
                 Text("Login").tag(true)
+                    .foregroundStyle(Color(hex:0x1a1111))
                 Text("Register").tag(false)
             }
             .pickerStyle(.segmented)

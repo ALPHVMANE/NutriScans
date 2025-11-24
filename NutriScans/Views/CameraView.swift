@@ -15,7 +15,6 @@ struct CameraView: View {
     @State public var scannedString: String = "Scan a barcode"
     @State public var showItemView = false
     @State var isValidBarcode: Bool = false
-       
     
     var body: some View {
         NavigationView{
@@ -40,11 +39,7 @@ struct CameraView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 40))
                     .padding()
                     .onTapGesture {
-//                        NavigationLink(destination: ItemDetailsView(scannedString: $scannedString)){
-//                            
-//                        }
                     }
-                
              }
         }
     }

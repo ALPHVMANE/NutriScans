@@ -19,6 +19,7 @@ struct LoginView: View {
     var body: some View {
         VStack{
             Spacer()
+
             Text("Login")
                 .font(.custom("Colus-Regular", size: 30))
                 .foregroundColor(Color(hex: 0xc9cb77))
@@ -30,8 +31,8 @@ struct LoginView: View {
                         .autocorrectionDisabled()
                         .keyboardType(.emailAddress)
                         .foregroundStyle(Color(hex: 0x7e8039))
-                    
                     SecureField("", text: $password, prompt: Text("Password (Min 6 characters)").foregroundColor(.gray))
+
                         .foregroundColor(Color(hex: 0x7e8039))
                     
                 }.listRowBackground(Color(hex: 0x394c4c))
@@ -44,6 +45,7 @@ struct LoginView: View {
                 }
                 
                 
+
                 Button(action: {
                     // validations
                     guard Validators.isValidEmail(email) else {
