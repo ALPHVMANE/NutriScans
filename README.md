@@ -11,7 +11,7 @@ NutriScans is a SwiftUI-based iOS application designed to help users quickly acc
 ## Technology Stack
 
 - **Frontend**: <a href="#"><img alt="Swift" src="https://img.shields.io/badge/Swift%20|%20SwiftUI-F05138?logo=swift&logoColor=white"></a>
-- **Backend & Authentication**: <a href="#"><img alt="Firebase" src ="https://img.shields.io/badge/Firebase-%23316192.svg?logo=firebase&logoColor=white"></a>
+- **Backend & Authentication**: <a href="#"><img alt="Firebase" src ="https://img.shields.io/badge/Firebase-EB844E.svg?logo=firebase&logoColor=white"></a>
 
 - **Data Source**: [Open Food Facts API](https://world.openfoodfacts.net/)
 - **Core Frameworks**: AVFoundation, Vision for camera and barcode detection.
@@ -50,7 +50,7 @@ To run this project locally, you will need Xcode and a configured Apple Develope
     cd nutriscans
     ```
 2.  **Open the project in Xcode:**
-    Open the `NutriScans.xcodeproj` file in Xcode. Xcode will automatically resolve the Swift Package Manager dependencies.
+    Open the `NutriScans.xcodeproj` file in Xcode. Ensure that the project has the required dependencies by looking at the package settings.
 
 3.  **Firebase Configuration:**
     The project includes a `GoogleService-Info.plist` file. To connect the app to your own Firebase backend, you must:
@@ -62,14 +62,14 @@ To run this project locally, you will need Xcode and a configured Apple Develope
 
 4.  **Build and Run:**
     Select a target device or simulator in Xcode and run the application.
-### Submit new
 
-|      |      |      |      |
-|------|------|------|------|
-|![Screenshot1](./readme-files/new/IMG_4579.PNG)|![Screenshot2](./readme-files/new/IMG_4582.PNG)|![Screenshot3](./readme-files/new/IMG_4584.PNG)|![Screenshot4](./readme-files/new/IMG_4585.PNG)|
-
-### View existing
+    
+### NutriScans Previews
 
 |      |      |      |
 |------|------|------|
-|![Screenshot5](./readme-files/view/IMG_4586.PNG)|![Screenshot6](./readme-files/view/IMG_4589.PNG)|![Screenshot7](./readme-files/view/IMG_4591.PNG)|
+|![Screenshot1](./readme/HomePage.PNG)|![Screenshot2](./readme.DisplayPage.PNG)|![Screenshot3](./readme/AddProduct.PNG)|
+
+|      |      |      |
+|------|------|------|
+|![Screenshot4](./readme/Login.PNG)|![Screenshot6](./readme/Profile.PNG)|![Screenshot7](./readme/Register.PNG)|
