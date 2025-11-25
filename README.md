@@ -68,8 +68,8 @@ To run this project locally, you will need Xcode and a configured Apple Develope
 
 |      |      |      |
 |------|------|------|
-|![Screenshot1](./readme/HomePage.PNG)|![Screenshot2](./readme.DisplayPage.PNG)|![Screenshot3](./readme/AddProduct.PNG)|
+|![Screenshot1](./readme/HomePage.png)|![Screenshot2](./readme/DisplayPage.png)|![Screenshot3](./readme/AddProduct.png)|
 
 |      |      |      |
 |------|------|------|
-|![Screenshot4](./readme/Login.PNG)|![Screenshot6](./readme/Profile.PNG)|![Screenshot7](./readme/Register.PNG)|
+|![Screenshot4](./readme/Login.png)|![Screenshot6](./readme/Profile.png)|![Screenshot7](./readme/Register.png)|
