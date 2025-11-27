@@ -16,7 +16,6 @@ enum HTTPMethod: String {
         func sendRequest<T: Codable> (toUrl: String, method: HTTPMethod, body: T? = nil) async -> T?{ // T : Template asynchronous function
             do{
                 guard let url = URL(string: toUrl) else { throw NetworkError.badUrl }
-                
                 //create request
                 var request = URLRequest(url: url)
                 request.httpMethod = method.rawValue
@@ -48,7 +47,6 @@ enum HTTPMethod: String {
                 guard let url = URL(string: fromURL) else { throw NetworkError.badUrl }
                 
                 let (data, response) = try await URLSession.shared.data(from: url)
-
                 guard let response = response as? HTTPURLResponse else { throw NetworkError.badResponse }
                 
                 guard response.statusCode >= 200 && response.statusCode < 300 else {
@@ -63,7 +61,6 @@ enum HTTPMethod: String {
                 print("There was an error creating the URL")
             } catch NetworkError.badResponse {
                 print("Did not get a valid response")
-                
             } catch NetworkError.badStatus {
                 print("Did not get a 2xx status code from the response")
             } catch NetworkError.failedToDecodeResponse {

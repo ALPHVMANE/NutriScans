@@ -36,16 +36,14 @@ struct RegisterView: View {
                     
                     SecureField("Password (Min 6 characters)", text: $password, prompt: Text("Password (Min. 6 characters)").foregroundColor(.gray))
                     
-                    
                 } .listRowBackground(Color(hex: 0x394c4c))
-                    .foregroundStyle(Color(hex: 0xffb3af))
+                    .foregroundStyle(Color(hex: 0x5f6935))
                 
                 if let errorMessage = errorMessage {
                     Text(errorMessage)
                         .foregroundColor(Color(hex: 0xffdad6))
                         .listRowBackground(Color(hex: 0x93000a))
                 }
-                
                 
                 Button(action: {
                     print("Sign up clicked")
